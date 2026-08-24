@@ -3,17 +3,17 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>杨子墨 Yang Zimo · 在华师读书,在生活里乱跑</title>
+<title>杨子墨 Yang Zimo · AI 产品经理 / AI 应用与企业服务</title>
 
 <!-- SEO -->
-<meta name="description" content="杨子墨 (Yang Zimo) · 华南师范大学信息管理与信息系统大三学生。一个在华师读书、在生活里乱跑的人。AI 产品爱好者,记录我在做、在玩、在想的东西。">
+<meta name="description" content="杨子墨 (Yang Zimo) · 华南师范大学信息管理与信息系统 2027 届。正在准备 AI 产品经理秋招，并探索 AI+会计产品机会；关注 AI 应用、企业服务与从需求到验证的完整交付。">
 <meta name="keywords" content="杨子墨, Yang Zimo, AI 产品经理, 华南师范大学, 个人主页, Personal Site, 信息管理与信息系统">
 <meta name="author" content="杨子墨 Yang Zimo">
 <meta name="theme-color" content="#2D5BFF">
 
 <!-- Open Graph -->
-<meta property="og:title" content="杨子墨 · 在华师读书,在生活里乱跑">
-<meta property="og:description" content="信管专业大三在读 · 喜欢用 AI 工具把模糊的想法跑成产品,也喜欢出去走走、撸铁、和朋友开几局游戏。这里是我的小角落。">
+<meta property="og:title" content="杨子墨 · AI 产品经理 / AI 应用与企业服务">
+<meta property="og:description" content="2027 届秋招进行中 · 用产品方法与 AI 工具，把模糊问题拆成可验证、可交付的产品方案。">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:site_name" content="Zimo · Personal Site">
@@ -21,14 +21,12 @@
 <!-- Twitter Card -->
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="杨子墨 · Yang Zimo">
-<meta name="twitter:description" content="一个在华师读书、在生活里乱跑的人。">
+<meta name="twitter:description" content="AI 产品经理求职者 · AI 应用、企业服务与 AI+会计产品探索。">
 
 <!-- Favicon: 蓝底白字斜体 Z,呼应网站 logo -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%232D5BFF'/><text x='50' y='74' font-family='Georgia, serif' font-size='66' fill='white' text-anchor='middle' font-style='italic' font-weight='500'>Z</text></svg>">
 
-<link rel="preconnect" href="https://fonts.font.im">
-<link rel="dns-prefetch" href="https://fonts.font.im">
-<link href="https://fonts.font.im/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,300;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&family=Noto+Serif+SC:wght@300;400;500;600&family=Noto+Sans+SC:wght@300;400;500;600&display=swap" rel="stylesheet">
+<!-- 采用系统字体栈，保证本地预览与 GitHub Pages 在弱网下也能稳定显示 -->
 <style>
 :root {
   --bg: #FAF7F1;
@@ -1836,15 +1834,295 @@ footer .sig {
   .section-title { font-size: clamp(2rem, 7vw, 2.6rem); }
   .about-text { font-size: 1.15rem; padding-left: 1.2rem; }
 }
+
+/* ============ 2026 Refresh · Welcome / Now / Inline edit ============ */
+.loader {
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(45, 91, 255, 0.16), transparent 26%),
+    radial-gradient(circle at 82% 76%, rgba(255, 181, 155, 0.22), transparent 30%),
+    var(--bg);
+  cursor: pointer;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.85s ease;
+}
+.loader::before,
+.loader::after {
+  content: '';
+  position: absolute;
+  width: min(72vw, 840px);
+  aspect-ratio: 1;
+  border: 1px solid rgba(45, 91, 255, 0.16);
+  border-radius: 42% 58% 63% 37% / 48% 38% 62% 52%;
+  animation: welcome-orbit 14s linear infinite;
+  z-index: -1;
+}
+.loader::after {
+  width: min(55vw, 620px);
+  border-color: rgba(255, 181, 155, 0.28);
+  animation-direction: reverse;
+  animation-duration: 19s;
+}
+.loader.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+.loader-content {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 0.8rem;
+  width: min(92vw, 860px);
+  padding: 3rem 2rem;
+  text-align: center;
+  font-size: initial;
+  animation: welcome-arrive 1.1s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.loader-kicker {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  letter-spacing: 0.38em;
+  color: var(--accent);
+}
+.loader-kicker::before,
+.loader-kicker::after {
+  content: '';
+  width: 34px;
+  height: 1px;
+  background: currentColor;
+  transform: scaleX(0);
+  animation: welcome-line 0.8s 0.45s ease forwards;
+}
+.loader-title {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 0.35em;
+  flex-wrap: wrap;
+  font-family: 'STKaiti', 'KaiTi', 'Noto Serif SC', serif;
+  font-size: clamp(2.7rem, 8vw, 7rem);
+  font-weight: 400;
+  line-height: 1.05;
+  letter-spacing: 0.08em;
+  color: var(--ink);
+  text-shadow: 0 18px 50px rgba(21, 23, 42, 0.08);
+}
+.loader-title span,
+.loader-title em {
+  display: inline-block;
+  opacity: 0;
+  transform: translateY(24px) rotate(1.5deg);
+  animation: welcome-word 0.95s 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.loader-title em {
+  color: var(--accent);
+  font-style: italic;
+  animation-delay: 0.42s;
+}
+.loader-signature {
+  margin-top: 0.4rem;
+  font-family: 'Fraunces', serif;
+  font-size: clamp(1.9rem, 4vw, 3.8rem);
+  font-style: italic;
+  font-weight: 300;
+  letter-spacing: -0.04em;
+  color: var(--ink-soft);
+  opacity: 0;
+  animation: welcome-sign 0.9s 0.85s ease forwards;
+}
+.loader-signature i { color: var(--accent); }
+.loader-hint {
+  margin-top: 1.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.62rem;
+  letter-spacing: 0.16em;
+  color: var(--ink-faint);
+  opacity: 0;
+  animation: welcome-sign 0.8s 1.2s ease forwards, welcome-breathe 2.4s 2s ease-in-out infinite;
+}
+.loader-spark {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: var(--butter);
+  box-shadow: 0 0 0 8px rgba(255, 229, 168, 0.2), 130px -70px 0 -2px var(--mint), -155px 48px 0 -3px var(--peach);
+  animation: welcome-float 4.5s ease-in-out infinite;
+}
+@keyframes welcome-arrive { from { opacity: 0; transform: scale(0.96); } to { opacity: 1; transform: scale(1); } }
+@keyframes welcome-word { to { opacity: 1; transform: translateY(0) rotate(0); } }
+@keyframes welcome-sign { to { opacity: 1; } }
+@keyframes welcome-line { to { transform: scaleX(1); } }
+@keyframes welcome-breathe { 50% { opacity: 0.45; transform: translateY(3px); } }
+@keyframes welcome-float { 50% { transform: translate(12px, -10px) scale(1.15); } }
+@keyframes welcome-orbit { to { transform: rotate(360deg); } }
+
+.now-section { padding-top: 1.5rem; padding-bottom: 6rem; }
+.now-section .section-head { margin-bottom: 2.4rem; }
+.now-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+}
+.now-card {
+  position: relative;
+  min-height: 250px;
+  padding: 2rem;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+}
+.now-card::after {
+  content: '';
+  position: absolute;
+  right: -70px;
+  bottom: -90px;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(45, 91, 255, 0.14), transparent 68%);
+}
+.now-card:nth-child(2)::after { background: radial-gradient(circle, rgba(255, 181, 155, 0.25), transparent 68%); }
+.now-card:hover { transform: translateY(-5px); border-color: rgba(45, 91, 255, 0.24); box-shadow: 0 22px 60px -34px rgba(21, 23, 42, 0.35); }
+.now-index {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.68rem;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+}
+.now-card h3 {
+  margin: 2.2rem 0 0.8rem;
+  font-family: 'Fraunces', 'Noto Serif SC', serif;
+  font-size: clamp(1.6rem, 3vw, 2.35rem);
+  font-weight: 500;
+  line-height: 1.15;
+}
+.now-card p { max-width: 540px; color: var(--ink-soft); line-height: 1.75; }
+.now-foot {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  margin-top: 1.2rem;
+}
+.now-pill {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.66rem;
+  color: var(--ink-soft);
+}
+[data-theme="dark"] .now-card { background: rgba(255, 255, 255, 0.04); border-color: var(--card-border); }
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  width: fit-content;
+  margin-top: 1.15rem;
+  color: var(--accent);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.72rem;
+  text-decoration: none;
+  letter-spacing: 0.04em;
+}
+.project-link:hover { text-decoration: underline; text-underline-offset: 4px; }
+
+.edit-hotzone {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 46px;
+  height: 46px;
+  z-index: 10020;
+}
+.edit-controls {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  display: flex;
+  gap: 0.35rem;
+  width: max-content;
+  padding: 0.35rem;
+  border: 1px solid var(--line-strong);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  box-shadow: 0 10px 35px rgba(21, 23, 42, 0.13);
+  backdrop-filter: blur(14px);
+  opacity: 0;
+  transform: translateY(-8px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+.edit-hotzone:hover .edit-controls,
+.edit-hotzone:focus-within .edit-controls,
+.edit-hotzone.is-open .edit-controls { opacity: 1; transform: translateY(0); pointer-events: auto; }
+.edit-toggle,
+.edit-save,
+.edit-export {
+  border: 0;
+  border-radius: 7px;
+  padding: 0.48rem 0.7rem;
+  background: var(--ink);
+  color: var(--bg);
+  font: 600 0.68rem 'Noto Sans SC', sans-serif;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.edit-save { background: var(--accent); }
+.edit-export { background: transparent; color: var(--ink); border: 1px solid var(--line-strong); }
+body.editing-active [data-edit-id] { outline: 1px dashed rgba(45, 91, 255, 0.5); outline-offset: 4px; cursor: text; }
+body.editing-active [data-edit-id]:focus { outline: 2px solid var(--accent); background: rgba(45, 91, 255, 0.05); }
+
+@media (max-width: 900px) {
+  .now-grid { grid-template-columns: 1fr; }
+  .now-card { min-height: 0; }
+}
+@media (max-width: 720px) {
+  .loader-content { padding: 2rem 1.2rem; }
+  .loader-title { font-size: clamp(2.35rem, 13vw, 4rem); letter-spacing: 0.03em; }
+  .loader::before { width: 120vw; }
+  .loader::after { width: 92vw; }
+  .loader-hint { font-size: 0.56rem; }
+  .now-section { padding-top: 0.5rem; }
+  .now-card { padding: 1.5rem; }
+  .nav-links li { display: none; }
+  .nav-links li:nth-child(1),
+  .nav-links li:nth-child(2),
+  .nav-links li:nth-child(5),
+  .nav-links li:nth-child(8) { display: list-item; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; scroll-behavior: auto !important; }
+  .loader-content, .loader-title span, .loader-title em, .loader-signature, .loader-hint { opacity: 1; transform: none; }
+}
 </style>
 </head>
 <body>
 
 <!-- 首屏加载动画 -->
-<div class="loader" id="loader">
+<div class="loader" id="loader" role="dialog" aria-label="欢迎来到杨子墨的个人网站" tabindex="0">
   <div class="loader-content">
-    <span class="loader-dot"></span>
-    <span class="loader-text">Zimo<span class="accent-italic">.</span></span>
+    <span class="loader-spark" aria-hidden="true"></span>
+    <div class="loader-kicker">HELLO</div>
+    <div class="loader-title"><span>欢迎来到</span><em>我的世界</em></div>
+    <div class="loader-signature">Zimo<i>.</i></div>
+    <div class="loader-hint">CLICK OR PRESS ENTER TO EXPLORE</div>
+  </div>
+</div>
+
+<!-- 左上角轻触可编辑：E 切换，Ctrl/Cmd+S 保存 -->
+<div class="edit-hotzone" id="editHotzone" aria-label="页面编辑工具">
+  <div class="edit-controls">
+    <button type="button" class="edit-toggle" id="editToggle">编辑</button>
+    <button type="button" class="edit-save" id="saveEdits">保存</button>
+    <button type="button" class="edit-export" id="exportHtml">导出 HTML</button>
   </div>
 </div>
 
@@ -1867,6 +2145,7 @@ footer .sig {
   </div>
   <ul class="nav-links">
     <li><a href="#home">首页</a></li>
+    <li><a href="#now">Now</a></li>
     <li><a href="#about">About</a></li>
     <li><a href="#experience">经历</a></li>
     <li><a href="#projects">项目</a></li>
@@ -1892,22 +2171,22 @@ footer .sig {
     <div class="hero-left">
       <div class="hero-tag">
         <span class="live"></span>
-        <span>Hello, World · 个人主页</span>
+        <span>2027 AUTUMN RECRUITMENT · OPEN TO WORK</span>
       </div>
-      <h1 class="hero-title">
+      <h1 class="hero-title" data-edit-id="hero-title">
         你好,我是 <span class="underline">杨子墨</span><br>
         在 <span class="accent">华师</span> 读书,<br>
         在生活里<span class="typing-text" id="typingText"></span><span class="typing-caret" id="typingCaret"></span>。
       </h1>
-      <p class="hero-sub">
-        信管专业大三在读 · 喜欢用 AI 工具把模糊的想法跑成产品,
-        也喜欢出去走走、撸铁、和朋友开几局游戏。
-        <strong>这里是我的小角落</strong> —— 记录我在做、在玩、在想的东西。
+      <p class="hero-sub" data-edit-id="hero-subtitle">
+        华南师范大学信息管理与信息系统 2027 届，正在准备秋招，目标
+        <strong>AI 产品经理 · AI 应用 / 企业服务方向</strong>。
+        我更关心如何把真实业务问题拆清楚、让方案跑起来，并在反馈与约束中持续迭代。
       </p>
       <div class="hero-meta">
         <div class="meta-item">
           <span class="meta-label">Now</span>
-          <span class="meta-value">大三 · 在读</span>
+          <span class="meta-value">2027 届 · 秋招中</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Base</span>
@@ -1915,11 +2194,11 @@ footer .sig {
         </div>
         <div class="meta-item">
           <span class="meta-label">Building</span>
-          <span class="meta-value highlight">AI · 产品</span>
+          <span class="meta-value highlight">AI + 会计产品探索</span>
         </div>
         <div class="meta-item">
-          <span class="meta-label">Playing</span>
-          <span class="meta-value">三角洲 · 英雄联盟</span>
+          <span class="meta-label">Direction</span>
+          <span class="meta-value">AI 应用 · 企业服务</span>
         </div>
       </div>
     </div>
@@ -1927,37 +2206,59 @@ footer .sig {
     <div class="hero-right">
       <div class="hero-card">
         <div class="card-header">
-          <span class="card-id">PROFILE</span>
-          <span class="card-status">ALWAYS LEARNING</span>
+          <span class="card-id">CURRENT PROFILE</span>
+          <span class="card-status">OPEN TO WORK</span>
         </div>
 
         <div class="card-section">
-          <div class="card-section-label">最近沉迷</div>
+          <div class="card-section-label">正在关注</div>
           <div class="card-keywords">
-            <span class="kw">AI 实战</span>
-            <span class="kw alt">Vibe Coding</span>
-            <span class="kw alt2">旅游</span>
-            <span class="kw">健身</span>
+            <span class="kw">AI 产品</span>
+            <span class="kw alt">企业服务</span>
+            <span class="kw alt2">AI + 会计</span>
+            <span class="kw">产品验证</span>
           </div>
         </div>
 
         <div class="card-section">
           <div class="card-section-label">手上在做的事</div>
-          <div style="font-family: 'Noto Serif SC', serif; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.6;">
-            折腾一套企业级多租户 AI 数据平台 —— 用 <em>RAG + LangGraph</em> 取代模型微调,
-            让 AI 助手"懂边界"; 找一份产品经理实习, 学习工作技能。
+          <div data-edit-id="current-work-summary" style="font-family: 'Noto Serif SC', serif; font-size: 0.95rem; color: var(--ink-soft); line-height: 1.7;">
+            准备 2027 届秋招，沉淀 AI 产品作品集与面试表达；持续练习从需求洞察、方案设计到评测验收与风险控制的 AI 产品完整方法。
           </div>
         </div>
 
         <div class="card-section">
           <div class="card-section-label">一些数据</div>
           <div class="spec-row"><span class="spec-key">学校</span><span class="spec-val">华南师范大学 (211)</span></div>
-          <div class="spec-row"><span class="spec-key">GPA</span><span class="spec-val">3.74 / 5.0</span></div>
+          <div class="spec-row"><span class="spec-key">GPA</span><span class="spec-val">3.75 / 5.0</span></div>
           <div class="spec-row"><span class="spec-key">排名</span><span class="spec-val">TOP 12%</span></div>
           <div class="spec-row"><span class="spec-key">语言</span><span class="spec-val">CET-6 · IELTS 6.0</span></div>
         </div>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ============ NOW ============ -->
+<section id="now" class="now-section">
+  <div class="section-head reveal">
+    <div class="section-num">00 — NOW</div>
+    <h2 class="section-title">此刻正在<span class="accent">发生</span>。</h2>
+    <p class="section-desc" data-edit-id="now-intro">比起一串静态标签，我更想记录当下真正投入时间的两件事。</p>
+  </div>
+  <div class="now-grid">
+    <article class="now-card reveal">
+      <span class="now-index">01 / CAREER</span>
+      <h3 data-edit-id="now-career-title">准备 2027 届秋招</h3>
+      <p data-edit-id="now-career-body">目标 AI 产品经理与 AI 应用 / 企业服务方向。正在整理实习与项目证据、完善作品集，并把每个技术名词转化成自己能讲清楚的产品决策、验证方法和能力边界。</p>
+      <div class="now-foot"><span class="now-pill">AI 产品经理</span><span class="now-pill">企业服务</span><span class="now-pill">作品集</span><span class="now-pill">面试准备</span></div>
+    </article>
+    <article class="now-card reveal">
+      <span class="now-index">02 / EXPLORATION</span>
+      <h3 data-edit-id="now-accounting-title">探索 AI + 会计产品</h3>
+      <p data-edit-id="now-accounting-body">不从“AI 很热门”出发，而是拆解具体会计任务、可用数据、评测标准、人工复核与合规风险，寻找能被真实流程采用、价值可以被验证的产品切入点。</p>
+      <div class="now-foot"><span class="now-pill">任务拆解</span><span class="now-pill">数据与评测</span><span class="now-pill">人工审核</span><span class="now-pill">治理风险</span></div>
+    </article>
   </div>
 </section>
 
@@ -1970,37 +2271,35 @@ footer .sig {
 
   <div class="about-grid">
     <div class="about-text">
-      <p>
+      <p data-edit-id="about-origin">
         我从广东河源的一个小<span class="em">山村</span>出发,
         一路读书一路往外走 —— 中学第一次看见城市的霓虹,
         大学第一次坐着高铁穿过桥隧,
         <span class="mark">才慢慢知道世界比我以为的要大很多</span>。
       </p>
-      <p>
+      <p data-edit-id="about-character">
         性格温和但不慢热, 喜欢和人聊天, 也享受一个人安静做事的时间 ——
         调一段代码、把一个想法跑通、走一条没走过的街、开一把刺激的对局,
         都是会让我开心的小事。
       </p>
-      <p>
+      <p data-edit-id="about-ai-start">
         2023 年进入大学, 刚好赶上 <span class="em">AI 时代</span> 的开端。
         那段时间看 ChatGPT、Claude、Cursor 一个一个冒出来, 我隐约觉得 ——
         自己正好站在一条新的河边, 不下水有点可惜。
       </p>
-      <p>
-        后来就开始动手: 学习 Python 和 SQL, 自己慢慢摸索各类 AI,
-        用各类 AI 工具把模糊的想法跑成产品,
-        也在国家级项目里把 LSTM / Transformer / DDQN / LLM 缝成一套系统。
-        慢慢发现, 真正让我兴奋的不是 "把功能写对", 而是
-        <span class="mark">"灵光乍现, 想要实现这个功能"</span>。
+      <p data-edit-id="about-practice">
+        后来我开始把想法放进真实流程里验证：在国家级大创中参与预测、决策与安全校验模块，
+        在实习中推动 <span class="em">AI 多渠道内容运营中心</span>内部上线，
+        也持续用 AI 协作完成原型、联调、测试和迭代。
+        我逐渐发现，真正让我兴奋的不是堆技术名词，而是
+        <span class="mark">把模糊问题拆成用户愿意使用的产品</span>。
       </p>
-      <p>
-        我相信 <span class="em">未来注定是 AI 必备的时代</span> ——
-        就像 30 年前没人能预料互联网会改变所有人的生活, AI 也会一点点渗进每一个角落,
-        慢慢变成像水电、网络一样的<span class="em">底层基础设施</span>。
-        我想做的, 是早一点入场、早一点学会怎么和它一起工作 ——
-        不是被它替代, 而是借它的力, 走得比一个人更远。
+      <p data-edit-id="about-current">
+        现在，我正在准备 2027 届秋招，同时探索 <span class="em">AI + 会计</span>。
+        我会从具体任务、数据条件、评测方式和人工边界出发，而不是先假设 AI 能解决一切。
+        对我来说，代码是验证方案的工具；把需求讲清楚、让流程跑通、对结果负责，才是产品工作的核心。
       </p>
-      <p>
+      <p data-edit-id="about-ending">
         我还在路上 —— <span class="em">很慢, 但每天都在动。</span>
       </p>
     </div>
@@ -2016,7 +2315,7 @@ footer .sig {
         <div class="edu-stats">
           <div class="edu-stat">
             <div class="edu-stat-label">GPA</div>
-            <div class="edu-stat-val">3.74<small>/5.0</small></div>
+            <div class="edu-stat-val">3.75<small>/5.0</small></div>
           </div>
           <div class="edu-stat">
             <div class="edu-stat-label">RANK</div>
@@ -2037,8 +2336,9 @@ footer .sig {
             <span class="skill-tag">Gemini</span>
             <span class="skill-tag">LLM</span>
             <span class="skill-tag">RAG</span>
-            <span class="skill-tag">LangGraph</span>
-            <span class="skill-tag">多模态</span>
+            <span class="skill-tag">Workflow / Agent</span>
+            <span class="skill-tag">结构化输出</span>
+            <span class="skill-tag">人工审核</span>
           </div>
         </div>
 
@@ -2049,8 +2349,8 @@ footer .sig {
             <span class="skill-tag">用户访谈</span>
             <span class="skill-tag">用户画像</span>
             <span class="skill-tag">竞品分析</span>
-            <span class="skill-tag">WBS</span>
-            <span class="skill-tag">甘特图</span>
+            <span class="skill-tag">需求优先级</span>
+            <span class="skill-tag">验收标准</span>
             <span class="skill-tag">信息架构</span>
           </div>
         </div>
@@ -2062,6 +2362,7 @@ footer .sig {
             <span class="skill-tag">MySQL</span>
             <span class="skill-tag">HTML/CSS/JS</span>
             <span class="skill-tag">Excel 透视</span>
+            <span class="skill-tag">Figma / Pencil</span>
             <span class="skill-tag">Draw.io</span>
             <span class="skill-tag">GitHub</span>
             <span class="skill-tag">Docker</span>
@@ -2072,31 +2373,38 @@ footer .sig {
       <div class="detail-block reveal">
         <div class="detail-title">RESOURCES · 资源</div>
         <div class="action-links">
-          <a href="./resume.pdf" class="action-link" download>
+          <a href="./resume.pdf" class="action-link" download="杨子墨_AI产品经理秋招简历.pdf">
             <div class="action-link-text">
-              <span class="action-link-title">下载PDF简历</span>
-              <span class="action-link-sub">最新版 · 2026</span>
+              <span class="action-link-title">下载我的简历</span>
+              <span class="action-link-sub">最新版 · 2026.08</span>
             </div>
             <span class="action-link-arrow">↓</span>
           </a>
-          <a href="https://github.com/clearyzm" class="action-link" target="_blank">
+          <a href="https://github.com/clearyzm" class="action-link" target="_blank" rel="noopener noreferrer">
             <div class="action-link-text">
               <span class="action-link-title">GitHub</span>
               <span class="action-link-sub">@clearyzm</span>
             </div>
             <span class="action-link-arrow">↗</span>
           </a>
-          <a href="https://clearyzm.github.io/Delta-Force/" class="action-link" target="_blank">
+          <a href="https://github.com/clearyzm/geekdance-aiops" class="action-link" target="_blank" rel="noopener noreferrer">
             <div class="action-link-text">
-              <span class="action-link-title">随机抽卡系统 Demo</span>
-              <span class="action-link-sub">Live Project</span>
+              <span class="action-link-title">AI 多渠道内容运营中心</span>
+              <span class="action-link-sub">真实内部业务 · GitHub</span>
             </div>
             <span class="action-link-arrow">↗</span>
           </a>
-          <a href="https://github.com/clearyzm/enterprise-ai-db" class="action-link" target="_blank">
+          <a href="https://github.com/clearyzm/moying-ai-platform" class="action-link" target="_blank" rel="noopener noreferrer">
             <div class="action-link-text">
-              <span class="action-link-title">企业级多租户数据 AI 管理平台</span>
-              <span class="action-link-sub">GitHub Repository</span>
+              <span class="action-link-title">墨影 AI 漫剧创作平台</span>
+              <span class="action-link-sub">AI 创作工作台 · GitHub</span>
+            </div>
+            <span class="action-link-arrow">↗</span>
+          </a>
+          <a href="https://github.com/clearyzm/geekspace-booking" class="action-link" target="_blank" rel="noopener noreferrer">
+            <div class="action-link-text">
+              <span class="action-link-title">跨端会议室预约系统</span>
+              <span class="action-link-sub">产品 Sandbox · GitHub</span>
             </div>
             <span class="action-link-arrow">↗</span>
           </a>
@@ -2116,6 +2424,29 @@ footer .sig {
   </div>
 
   <div class="timeline">
+
+    <div class="exp-item reveal">
+      <div class="exp-grid">
+        <div class="exp-date">2026.06 – 2026.08</div>
+        <div class="exp-content">
+          <h3 class="exp-role" data-edit-id="exp-geekdance-role">项目助理</h3>
+          <span class="exp-org">广东省深圳市极客跳动信息科技有限公司</span>
+          <ul class="exp-points" data-edit-id="exp-geekdance-points">
+            <li><strong>AI 产品实践:</strong> 围绕多渠道内容生产痛点，负责用户需求梳理、功能流程设计、MVP 优先级、版本推进、测试验收与反馈迭代，推动 AI 多渠道内容运营中心在公司内部上线。</li>
+            <li><strong>项目推进:</strong> 并行跟进 <span class="num">10+</span> 项目，维护关键节点、责任人和风险事项，通过早晚进度确认、排期协调与问题闭环，保障项目和客户信息有效流转。</li>
+            <li><strong>上线与沟通:</strong> 梳理账号注册、资质提交、第三方平台配置等上线依赖，对接数十位客户，将技术与资质要求转化为易理解的说明并协调内部跟进。</li>
+            <li><strong>知识沉淀:</strong> 重构钉钉共享知识库，补充教程与标准流程；将高频业务操作和公司规范沉淀为 <span class="num">20+</span> 可复用 AI Skill。</li>
+          </ul>
+          <div class="exp-tags">
+            <span class="exp-tag">AI 产品</span>
+            <span class="exp-tag">需求分析</span>
+            <span class="exp-tag">版本推进</span>
+            <span class="exp-tag">测试验收</span>
+            <span class="exp-tag">项目协同</span>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <div class="exp-item reveal">
       <div class="exp-grid">
@@ -2140,7 +2471,7 @@ footer .sig {
 
     <div class="exp-item reveal">
       <div class="exp-grid">
-        <div class="exp-date">2024.09 – <span class="now">至今</span></div>
+        <div class="exp-date">2024.09 – 2026.06</div>
         <div class="exp-content">
           <h3 class="exp-role">学生助理</h3>
           <span class="exp-org">华南师范大学 "一站式" 学生服务中心</span>
@@ -2185,9 +2516,9 @@ footer .sig {
 <section id="projects">
   <div class="section-head">
     <div class="section-num">03 — SELECTED WORK</div>
-    <h2 class="section-title">五个项目, <span class="accent">一条主线</span>。</h2>
-    <p class="section-desc">
-      <em>从数据库到 AI 平台, 从算法到 PRD</em>。这些是我这几年折腾过、并且至今还会回头看的几件事。每一个都教会了我一点新东西。
+    <h2 class="section-title">五个项目, <span class="accent">持续向前</span>。</h2>
+    <p class="section-desc" data-edit-id="projects-intro">
+      从真实内部业务到产品 Sandbox，从算法决策到 AI 创作。这里既记录已经被使用的成果，也如实标出仍在验证中的探索。
     </p>
   </div>
 
@@ -2196,143 +2527,142 @@ footer .sig {
     <article class="project project-flagship reveal">
       <div class="project-header">
         <div class="project-meta">
-          <span class="project-id">PROJECT 01 · FEATURED</span>
-          <span class="project-date">2025.01 – 2026.04</span>
+          <span class="project-id">PROJECT 01 · REAL-WORLD AI PRODUCT</span>
+          <span class="project-date">2026.06 – 2026.08</span>
         </div>
-        <span class="project-badge gold">🏆 国家级</span>
+        <span class="project-badge gold">内部上线</span>
       </div>
-      <h3 class="project-title">基于深度强化学习和图像识别的<br><span class="em">智能交通信号控制系统</span></h3>
-      <p class="project-desc">
-        大学生创新创业训练计划国家级立项 · 项目核心开发。
-        融合 LSTM / Transformer / DDQN / LLM 四种模型搭建交通信号控制核心引擎,
-        实现交通流量预测与信号智能调度。独立搭建可视化展示系统, 把模型决策过程透明化呈现给非技术评审 —— 这是 AI 产品 <em>"可解释性"</em> 的核心实践。
+      <h3 class="project-title" data-edit-id="project-aiops-title">AI 多渠道<br><span class="em">内容运营中心</span></h3>
+      <p class="project-desc" data-edit-id="project-aiops-desc">
+        针对官网、公众号和小红书内容生产中重复检索、撰写、配图、排版及跨平台搬运的问题，梳理“选题—检索—生成—配图—审核—草稿”完整链路；负责需求拆解、功能流程、MVP 优先级、测试验收与反馈迭代，并借助 AI 开发工具推动平台实现与接口联调。系统在公司内部投入使用，通过规则质检、人工复核、草稿优先和异常转人工守住发布边界。
       </p>
       <div class="project-stats">
         <div class="project-stat">
-          <span class="project-stat-val"><span class="em">4</span> 种</span>
-          <span class="project-stat-label">融合模型</span>
+          <span class="project-stat-val"><span class="em">3</span> 渠道</span>
+          <span class="project-stat-label">官网 / 公众号 / 小红书</span>
+        </div>
+        <div class="project-stat">
+          <span class="project-stat-val">数十篇</span>
+          <span class="project-stat-label">内部生成内容</span>
+        </div>
+        <div class="project-stat">
+          <span class="project-stat-val">3 天 → 半天</span>
+          <span class="project-stat-label">三渠道内容工作量</span>
+        </div>
+        <div class="project-stat">
+          <span class="project-stat-val">可追踪</span>
+          <span class="project-stat-label">任务与草稿流转</span>
+        </div>
+      </div>
+      <div class="project-stack">
+        <span class="stack-tag hot">需求分析</span>
+        <span class="stack-tag hot">Workflow</span>
+        <span class="stack-tag hot">结构化输出</span>
+        <span class="stack-tag">联网检索</span>
+        <span class="stack-tag">AI 配图</span>
+        <span class="stack-tag">异步任务</span>
+        <span class="stack-tag">人工审核</span>
+      </div>
+      <a class="project-link" href="https://github.com/clearyzm/geekdance-aiops" target="_blank" rel="noopener noreferrer">查看产品文档与 GitHub ↗</a>
+    </article>
+
+    <article class="project project-large reveal">
+      <div class="project-header">
+        <div class="project-meta">
+          <span class="project-id">PROJECT 02 · NATIONAL INNOVATION</span>
+          <span class="project-date">2025.01 – 2026.04</span>
+        </div>
+        <span class="project-badge gold">国家级结项</span>
+      </div>
+      <h3 class="project-title" data-edit-id="project-traffic-title">智能交通<span class="em">信号控制系统</span></h3>
+      <p class="project-desc" data-edit-id="project-traffic-desc">
+        参与将系统拆为“交通感知—流量预测—配时决策—规则校验—结果展示”五层，负责预测、决策和安全校验模块。设计 LSTM + Transformer 并行预测与 DDQN 配时策略，并将最小绿灯、行人过街、左转保护、相位互斥和周期范围转化为硬性规则，避免算法异常直接生成不可执行方案。
+      </p>
+      <div class="project-stats">
+        <div class="project-stat">
+          <span class="project-stat-val"><span class="em">5</span> 层</span>
+          <span class="project-stat-label">完整产品闭环</span>
         </div>
         <div class="project-stat">
           <span class="project-stat-val"><span class="em">1</span> 项</span>
-          <span class="project-stat-label">已申请专利</span>
-        </div>
-        <div class="project-stat">
-          <span class="project-stat-val">论文</span>
-          <span class="project-stat-label">撰写中</span>
+          <span class="project-stat-label">已申请软件著作权</span>
         </div>
         <div class="project-stat">
           <span class="project-stat-val">国家级</span>
-          <span class="project-stat-label">立项级别</span>
+          <span class="project-stat-label">大创项目结项</span>
         </div>
       </div>
       <div class="project-stack">
         <span class="stack-tag hot">LSTM</span>
         <span class="stack-tag hot">Transformer</span>
         <span class="stack-tag hot">DDQN</span>
-        <span class="stack-tag hot">LLM</span>
+        <span class="stack-tag">规则校验</span>
         <span class="stack-tag">Python</span>
-        <span class="stack-tag">YOLO</span>
-        <span class="stack-tag">数据可视化</span>
-      </div>
-    </article>
-
-    <article class="project project-large reveal">
-      <div class="project-header">
-        <div class="project-meta">
-          <span class="project-id">PROJECT 02 · INDIE</span>
-          <span class="project-date">2026.05</span>
-        </div>
-        <span class="project-badge">VIBE CODING</span>
-      </div>
-      <h3 class="project-title">企业级<span class="em">多租户数据 AI</span>管理平台</h3>
-      <p class="project-desc">
-        独立设计并主导开发的企业级 SaaS 平台 — 支持多企业隔离、多部门并发协作、多级审批流, 集成权限感知 AI 助手。
-        采用 <em>RAG + LangGraph 架构替代模型微调</em>, 在向量检索层联合权限过滤, 从架构上消除 AI 越权回答的风险, 而非依赖 Prompt 限制。
-      </p>
-      <div class="project-stats">
-        <div class="project-stat">
-          <span class="project-stat-val"><span class="em">18</span> 张</span>
-          <span class="project-stat-label">后端数据表</span>
-        </div>
-        <div class="project-stat">
-          <span class="project-stat-val"><span class="em">12</span> 阶段</span>
-          <span class="project-stat-label">交付里程碑</span>
-        </div>
-        <div class="project-stat">
-          <span class="project-stat-val">零</span>
-          <span class="project-stat-label">高危漏洞</span>
-        </div>
-      </div>
-      <div class="project-stack">
-        <span class="stack-tag hot">RAG</span>
-        <span class="stack-tag hot">LangGraph</span>
-        <span class="stack-tag hot">LangChain</span>
-        <span class="stack-tag">FastAPI</span>
-        <span class="stack-tag">PostgreSQL</span>
-        <span class="stack-tag">pgvector</span>
-        <span class="stack-tag">Redis</span>
-        <span class="stack-tag">Next.js</span>
-        <span class="stack-tag">Docker</span>
+        <span class="stack-tag">可视化</span>
       </div>
     </article>
 
     <article class="project project-medium reveal">
       <div class="project-header">
         <div class="project-meta">
-          <span class="project-id">PROJECT 03</span>
-          <span class="project-date">2025.06 – 10</span>
+          <span class="project-id">PROJECT 03 · AI CREATION</span>
+          <span class="project-date">2026.08 – NOW</span>
         </div>
-        <span class="project-badge bronze">🥉 省赛铜奖</span>
+        <span class="project-badge">持续迭代</span>
       </div>
-      <h3 class="project-title">智育领航 <span class="em">AI 教育</span></h3>
-      <p class="project-desc">
-        中国国际大学生创新大赛 · 项目核心成员。独立开发大赛作品展示平台 (HTML / CSS / JS), 完成 5 分钟答辩主视频拍摄与剪辑, 为省赛获奖提供视觉支撑。
+      <h3 class="project-title" data-edit-id="project-moying-title">墨影 <span class="em">AI 漫剧</span>创作平台</h3>
+      <p class="project-desc" data-edit-id="project-moying-desc">
+        面向多模态创作者的一体化作品项目，将文字、图像、视频、音频、画布和短剧生产放进同一工作台；当前在线站点以界面、响应式布局和交互展示为主，完整生成服务需自行部署与配置。
       </p>
       <div class="project-stack">
-        <span class="stack-tag">HTML/CSS</span>
-        <span class="stack-tag">JavaScript</span>
-        <span class="stack-tag">剪映</span>
+        <span class="stack-tag hot">多模态 AI</span>
+        <span class="stack-tag">创作 Agent</span>
+        <span class="stack-tag">Canvas</span>
+        <span class="stack-tag">短剧工作流</span>
       </div>
+      <a class="project-link" href="https://github.com/clearyzm/moying-ai-platform" target="_blank" rel="noopener noreferrer">查看 GitHub ↗</a>
     </article>
 
     <article class="project project-medium-2 reveal">
       <div class="project-header">
         <div class="project-meta">
-          <span class="project-id">PROJECT 04</span>
-          <span class="project-date">2026.03 – 2026.05</span>
+          <span class="project-id">PROJECT 04 · PRODUCT SANDBOX</span>
+          <span class="project-date">2026.08</span>
         </div>
-        <span class="project-badge">产品规划</span>
+        <span class="project-badge">跨端闭环</span>
       </div>
-      <h3 class="project-title">中小型企业<span class="em">资源管理系统</span> ERP</h3>
-      <p class="project-desc">
-        参与项目前期需求分析, 识别 <em>7 类核心用户角色</em>。基于 WBS 方法拆解项目为 6 阶段 / 16 工作包 / 22 任务, 使用 Excel 制作 12 周项目甘特图, 跟踪需求确认、数据库设计、核心模块开发等关键里程碑。
+      <h3 class="project-title" data-edit-id="project-booking-title">跨端<span class="em">会议室预约</span>系统</h3>
+      <p class="project-desc" data-edit-id="project-booking-desc">
+        面向企业员工定义多会议室预约范围、角色、业务规则、状态机和验收标准；设计“选择时段即占位”的并发方案与跨账号可见边界，输出 Web 与微信小程序原型，并通过 AI 协作推进跨端实现与回归验证。项目为作品集 Sandbox，未接入真实企业 OAuth。
       </p>
       <div class="project-stack">
-        <span class="stack-tag">需求分析</span>
-        <span class="stack-tag">WBS</span>
-        <span class="stack-tag">甘特图</span>
-        <span class="stack-tag">用户角色建模</span>
-        <span class="stack-tag">PRD</span>
+        <span class="stack-tag hot">PRD</span>
+        <span class="stack-tag hot">业务规则</span>
+        <span class="stack-tag">Pencil</span>
+        <span class="stack-tag">Web / 小程序</span>
+        <span class="stack-tag">并发占位</span>
       </div>
+      <a class="project-link" href="https://github.com/clearyzm/geekspace-booking" target="_blank" rel="noopener noreferrer">查看产品文档与 GitHub ↗</a>
     </article>
 
     <article class="project project-medium-3 reveal">
       <div class="project-header">
         <div class="project-meta">
-          <span class="project-id">PROJECT 05</span>
-          <span class="project-date">2025.03 – 2025.05</span>
+          <span class="project-id">PROJECT 05 · EXPLORATION</span>
+          <span class="project-date">2026.08 – NOW</span>
         </div>
-        <span class="project-badge">团队 LEAD</span>
+        <span class="project-badge">探索中</span>
       </div>
-      <h3 class="project-title">《英雄联盟》<span class="em">数据库</span>搭建</h3>
-      <p class="project-desc">
-        带领 3 人团队基于 MySQL 设计搭建游戏数据库。撰写 PRD, 分配数据采集 / 表结构设计 / SQL 编写任务, 推动团队 <em>提前 5 天</em> 完成需求, 查询效率提升 <em>30%</em>。
+      <h3 class="project-title" data-edit-id="project-accounting-title">AI + <span class="em">会计产品</span>探索</h3>
+      <p class="project-desc" data-edit-id="project-accounting-desc">
+        正在围绕会计工作中的高频任务与协作流程寻找产品切入点，重点记录任务边界、数据可得性、输出评测、人工复核、权限与合规风险。当前处于问题研究与方案收敛阶段，不把方向判断包装成已落地成果。
       </p>
       <div class="project-stack">
-        <span class="stack-tag">MySQL</span>
-        <span class="stack-tag">Draw.io ER</span>
-        <span class="stack-tag">SQL 调优</span>
-        <span class="stack-tag">团队协作</span>
+        <span class="stack-tag hot">场景研究</span>
+        <span class="stack-tag">任务拆解</span>
+        <span class="stack-tag">评测设计</span>
+        <span class="stack-tag">人工边界</span>
+        <span class="stack-tag">治理风险</span>
       </div>
     </article>
 
@@ -2562,7 +2892,7 @@ footer .sig {
           </div>
           <span class="contact-row-icon">→</span>
         </a>
-        <a href="https://github.com/clearyzm" class="contact-row" target="_blank">
+        <a href="https://github.com/clearyzm" class="contact-row" target="_blank" rel="noopener noreferrer">
           <div class="contact-row-left">
             <span class="contact-row-label">GITHUB</span>
             <span class="contact-row-val">@clearyzm</span>
@@ -2577,7 +2907,7 @@ footer .sig {
 <footer>
   <div>© 2026 杨子墨 · Yang Zimo. Built with care.</div>
   <div class="sig">curious → useful → shipping.</div>
-  <div>Last updated · MAY 2026</div>
+  <div>Last updated · AUG 2026</div>
 </footer>
 
 <script>
@@ -2681,13 +3011,26 @@ footer .sig {
     document.querySelectorAll('.reveal').forEach(el => io.observe(el));
   }
 
-  // ============ 7. 首屏 Loader(含自动兜底)============
+  // ============ 7. 欢迎首屏 ============
+  function loaderMarkup() {
+    return '<div class="loader-content">' +
+      '<span class="loader-spark" aria-hidden="true"></span>' +
+      '<div class="loader-kicker">HELLO</div>' +
+      '<div class="loader-title"><span>欢迎来到</span><em>我的世界</em></div>' +
+      '<div class="loader-signature">Zimo<i>.</i></div>' +
+      '<div class="loader-hint">CLICK OR PRESS ENTER TO EXPLORE</div>' +
+    '</div>';
+  }
+
   function ensureLoaderExists() {
     if (document.getElementById('loader')) return;
     const loader = document.createElement('div');
     loader.id = 'loader';
     loader.className = 'loader';
-    loader.innerHTML = '<div class="loader-content"><span class="loader-dot"></span><span class="loader-text">Zimo<span class="accent-italic">.</span></span></div>';
+    loader.setAttribute('role', 'dialog');
+    loader.setAttribute('aria-label', '欢迎来到杨子墨的个人网站');
+    loader.tabIndex = 0;
+    loader.innerHTML = loaderMarkup();
     document.body.insertBefore(loader, document.body.firstChild);
   }
 
@@ -2698,6 +3041,20 @@ footer .sig {
     if (!loader) { loaderHidden = true; return; }
     loaderHidden = true;
     loader.classList.add('hidden');
+    window.setTimeout(startTyping, 320);
+    window.setTimeout(() => loader.setAttribute('aria-hidden', 'true'), 850);
+  }
+
+  function bindLoader() {
+    const loader = document.getElementById('loader');
+    if (!loader) return;
+    loader.addEventListener('click', hideLoader);
+    loader.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === 'Escape' || e.key === ' ') {
+        e.preventDefault();
+        hideLoader();
+      }
+    });
   }
 
   // ============ 8. Hero 打字机(含自动兜底)============
@@ -2768,9 +3125,97 @@ footer .sig {
     sentences.forEach(s => io.observe(s));
   }
 
+  // ============ 10. 页面内轻量编辑与 HTML 导出 ============
+  function bindInlineEditor() {
+    const toggle = document.getElementById('editToggle');
+    const save = document.getElementById('saveEdits');
+    const exportButton = document.getElementById('exportHtml');
+    const hotzone = document.getElementById('editHotzone');
+    if (!toggle || !save || !exportButton || !hotzone) return;
+
+    const editables = Array.from(document.querySelectorAll('[data-edit-id]'));
+    const storagePrefix = 'zimo-site-edit:';
+    let editing = false;
+
+    editables.forEach(el => {
+      const key = storagePrefix + el.dataset.editId;
+      try {
+        const saved = localStorage.getItem(key);
+        if (saved !== null) el.innerHTML = saved;
+      } catch (e) {}
+    });
+
+    function setEditing(next) {
+      editing = next;
+      document.body.classList.toggle('editing-active', editing);
+      hotzone.classList.toggle('is-open', editing);
+      toggle.textContent = editing ? '完成' : '编辑';
+      editables.forEach(el => {
+        if (editing) {
+          el.setAttribute('contenteditable', 'true');
+          el.setAttribute('spellcheck', 'false');
+        } else {
+          el.removeAttribute('contenteditable');
+          el.removeAttribute('spellcheck');
+        }
+      });
+    }
+
+    function persistEdits() {
+      editables.forEach(el => {
+        try { localStorage.setItem(storagePrefix + el.dataset.editId, el.innerHTML); } catch (e) {}
+      });
+      const oldText = save.textContent;
+      save.textContent = '已保存';
+      window.setTimeout(() => { save.textContent = oldText; }, 900);
+    }
+
+    function exportHtml() {
+      const clone = document.documentElement.cloneNode(true);
+      clone.setAttribute('data-edit-version', 'export-' + Date.now());
+      clone.querySelectorAll('[contenteditable]').forEach(el => {
+        el.removeAttribute('contenteditable');
+        el.removeAttribute('spellcheck');
+      });
+      const cloneBody = clone.querySelector('body');
+      if (cloneBody) cloneBody.classList.remove('editing-active');
+      const cloneHotzone = clone.querySelector('#editHotzone');
+      if (cloneHotzone) cloneHotzone.classList.remove('is-open');
+      const cloneToggle = clone.querySelector('#editToggle');
+      if (cloneToggle) cloneToggle.textContent = '编辑';
+
+      const source = '<!DOCTYPE html>\n' + clone.outerHTML;
+      const blob = new Blob([source], { type: 'text/html;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'yang-zimo-personal-site-' + Date.now() + '.html';
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1500);
+    }
+
+    toggle.addEventListener('click', () => setEditing(!editing));
+    save.addEventListener('click', persistEdits);
+    exportButton.addEventListener('click', exportHtml);
+
+    document.addEventListener('keydown', e => {
+      const target = e.target;
+      const isTyping = target && (target.isContentEditable || /^(INPUT|TEXTAREA|SELECT)$/.test(target.tagName));
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 's') {
+        e.preventDefault();
+        persistEdits();
+        return;
+      }
+      if (!isTyping && e.key.toLowerCase() === 'e') setEditing(!editing);
+    });
+  }
+
   // ============ 主流程 ============
   function init() {
     ensureLoaderExists();
+    bindLoader();
     bindThemeToggle();
     bindSmoothScroll();
     bindScrollProgress();
@@ -2778,9 +3223,11 @@ footer .sig {
     bindParallax();
     bindReveal();
     setupAboutSentences();
+    bindInlineEditor();
 
-    setTimeout(hideLoader, 700);
-    setTimeout(startTyping, 1100);
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setTimeout(hideLoader, reducedMotion ? 450 : 3600);
+    setTimeout(startTyping, reducedMotion ? 500 : 3900);
   }
 
   if (document.readyState === 'loading') {
@@ -2790,9 +3237,9 @@ footer .sig {
   }
 
   // 兜底:慢网络也能完成
-  window.addEventListener('load', () => setTimeout(hideLoader, 700));
-  setTimeout(hideLoader, 2500);
-  setTimeout(startTyping, 1500);
+  window.addEventListener('load', () => setTimeout(hideLoader, 3600));
+  setTimeout(hideLoader, 5200);
+  setTimeout(startTyping, 4000);
 })();
 </script>
 </body>
